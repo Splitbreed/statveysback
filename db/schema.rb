@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20161118025348) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "service"
-    t.text     "feedback",   default: [],              array: true
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "overall_score"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_businesses_on_user_id", using: :btree
   end
 

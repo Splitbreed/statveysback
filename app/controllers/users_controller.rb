@@ -45,6 +45,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # def decode
+  #   decodepriv.call()
+  # end
+
 
   private
 
@@ -52,6 +56,11 @@ class UsersController < ApplicationController
   def token(id, username)
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
   end
+
+  # def decodepriv
+  #   decoded_token = JWT.decode token, ENV['JWT_SECRET'], true, { :algorithm => 'HS256' }
+  #   render json: {status: 200, message: decoded_token}
+  # end
 
   def payload(id, username)
     {

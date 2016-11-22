@@ -4,7 +4,7 @@ class CreateBusiness < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.string :name
       t.string :service
-      t.text :feedback, array: true, default: []
+      t.integer :overall_score
 
 
       t.timestamps
